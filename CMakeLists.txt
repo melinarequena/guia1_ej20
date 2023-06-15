@@ -3,4 +3,4 @@ project(guia1_ej20 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(guia1_ej20 main.c)
+add_executable(guia1_ej20 main.c EX20.c EX20.h)
