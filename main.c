@@ -23,6 +23,7 @@ int main() {
     enqueue(queue, stackOut(stack));
     enqueue(queue, stackOut(stack));
     enqueue(queue, stackOut(stack));
+    enqueue(queue, stackOut(stack));
 
     printQueue(queue);
     return 0;

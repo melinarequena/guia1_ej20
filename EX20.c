@@ -70,15 +70,9 @@ Node *listOut(List *list) {
         printf("Empty list\n");
         return NULL;
     }else{
-        Node * aux = list->header;
-        Node * act = list->header;
-        Node * prev = act;
-        while(act->next != NULL){
-            prev = act;
-            act = act->next;
-        }
-        prev->next = NULL;
-        return aux;
+        Node * out = list->header;
+        list->header = list->header->next;
+        out->next = NULL;
     }
 }
 
@@ -96,9 +90,10 @@ Node *stackOut(Stack *stack) {
         printf("Empty stack\n");
         return NULL;
     }else{
-        Node * aux = stack->top;
+        Node * out = stack->top;
         stack->top = stack->top->next;
-        return aux;
+        out->next = NULL;
+        return out;
     }
 }
 
@@ -116,7 +111,7 @@ void printList(List *list) {
     Node * aux = list->header;
     printf("\nList:\n");
     while(aux != NULL){
-        printf("%d ->", aux->data);
+        printf("%d -> ", aux->data);
         aux = aux->next;
     }
     printf("NULL\n");
@@ -127,19 +122,17 @@ void printStack(Stack *stack) {
     printf("Stack:\n");
     while( aux != NULL){
         printf("%d\n", aux->data);
-        printf("|\n");
-        printf("v\n");
         aux = aux->next;
     }
-    printf("NULL");
+    printf("NULL\n");
 }
 
 void printQueue(Queue *queue) {
     Node * aux = queue->head;
-    printf("Queue");
+    printf("\nQueue\n");
     while(aux != NULL){
-        printf("%d ->", aux->data);
+        printf("%d -> ", aux->data);
         aux = aux->next;
     }
-    printf("NULL");
+    printf("NULL\n");
 }
